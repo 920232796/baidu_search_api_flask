@@ -22,9 +22,10 @@ def search():
         print(len(return_list))
         number = database.search_content_number(keyword)
         print("number = " + str(number))
+
         return jsonify({"result_list": return_list, "total_number":number})
     else:
         return "hello world"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",debug=app.config["DEBUG"], threaded=True)
+    app.run(host="0.0.0.0",debug=app.config["DEBUG"], threaded=True, port=5001)

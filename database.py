@@ -6,6 +6,7 @@ db = pymysql.connect(host="115.28.79.206", user="root",password="f408909685", db
 
 def search_content(key_word, start, limit):
     """"""
+    db.ping(reconnect=True)
     cur = db.cursor()
 
     sql = "select * from spider_data where title like '%{0}%' limit {1}, {2}".format(key_word, start, limit)
